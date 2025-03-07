@@ -43,4 +43,12 @@ class ConversionsTest {
 			assertEquals("Cannot invoke \"java.lang.Integer.intValue()\" because \"null\" is null", e.getMessage());
 	}
 	
+	@Test
+	void testSwitchCase() {
+		Conversions conversions = new Conversions();
+		assertEquals("APPLE", conversions.switchCase("apple"));
+		assertEquals("orange", conversions.switchCase("ORANGE"));
+		assertEquals("BaNaNa", conversions.switchCase("bAnAnA"));
+	}
+	
 }
