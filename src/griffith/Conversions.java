@@ -1,17 +1,18 @@
+//Kornii Kuvaldin 3134926
 package griffith;
 
 public class Conversions {
 	final double RATE = 1.07; //This constant is the rate of exchange for euros to dollars
 
-	public double euroToDollar(double euro) {
+	public double euroToDollar(double euro) { //Converts euro to Dollars
 		return RATE*euro;
 	}
 
-	public double dollarToEuro(double dollar) {
+	public double dollarToEuro(double dollar) { // Converts dollars to euro
 		return dollar/RATE;
 	}
 
-	public int stringToInteger (String val) {
+	public int stringToInteger (String val) { //converts a string to an integer
 		int multiplier = 1; //This is used to determine if the number is negative or positive
 		int power = val.length()-1; //This is needed for multiplying powers of 10 to each individual number
 		int total = 0;
@@ -29,7 +30,7 @@ public class Conversions {
 		return total*multiplier;
 	}
 
-	public String integerToString (int val) {
+	public String integerToString (int val) { //converts an integer to a string
 		Integer valObj = val;
 		return valObj.toString();
 	}
@@ -41,8 +42,8 @@ public class Conversions {
 				c-=('a'-'A'); //Difference in Ascii table between uppercase and lowercase characters
 			else if(c>='A' && c<='Z')
 				c+=('a'-'A');
-				sb.append(c);
-			
+			sb.append(c);
+
 		}
 		return sb.toString();
 	} 

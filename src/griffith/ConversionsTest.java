@@ -1,3 +1,4 @@
+//Kornii Kuvaldin 3134926
 package griffith;
 
 import static org.junit.Assert.assertThrows;
@@ -8,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class ConversionsTest {
 
 	@Test
-	void testEuroToDollar() {
+	void testEuroToDollar() { //Tests euroToDollar method
 		Conversions conversions = new Conversions();
 		assertEquals(107, conversions.euroToDollar(100)); //Positives
 		assertEquals(0, conversions.euroToDollar(0));	//Zero
@@ -16,7 +17,7 @@ class ConversionsTest {
 	}
 
 	@Test
-	void testDollarToEuro() {
+	void testDollarToEuro() { //Tests dollarToEuro method
 		Conversions conversions = new Conversions();
 		assertEquals(100, conversions.dollarToEuro(107)); //Positives
 		assertEquals(0, conversions.dollarToEuro(0));	//Zero
@@ -24,31 +25,31 @@ class ConversionsTest {
 	}
 
 	@Test
-	void testStringToInteger() {
+	void testStringToInteger() { //Tests stringToInteger method
 		Conversions conversions = new Conversions();
 		assertEquals(42, conversions.stringToInteger("42"));
 		assertEquals(-42, conversions.stringToInteger("-42"));
 		Throwable e = assertThrows(IllegalArgumentException.class, () ->
-			conversions.stringToInteger(""));
-			assertEquals("String can't be empty or of incorrect format", e.getMessage());
+		conversions.stringToInteger(""));
+		assertEquals("String can't be empty or of incorrect format", e.getMessage());
 	}
 
 	@Test
-	void testIntegerToString() {
+	void testIntegerToString() { //Tests integerToString method
 		Conversions conversions = new Conversions();
 		assertEquals("42", conversions.integerToString(42));
 		assertEquals("-42", conversions.integerToString(-42));
 		Throwable e = assertThrows(NullPointerException.class, () ->
-			conversions.integerToString((Integer)null));
-			assertEquals("Cannot invoke \"java.lang.Integer.intValue()\" because \"null\" is null", e.getMessage());
+		conversions.integerToString((Integer)null));
+		assertEquals("Cannot invoke \"java.lang.Integer.intValue()\" because \"null\" is null", e.getMessage());
 	}
-	
+
 	@Test
-	void testSwitchCase() {
+	void testSwitchCase() { //Tests switchCase method
 		Conversions conversions = new Conversions();
 		assertEquals("APPLE", conversions.switchCase("apple"));
 		assertEquals("orange", conversions.switchCase("ORANGE"));
 		assertEquals("BaNaNa", conversions.switchCase("bAnAnA"));
 	}
-	
+
 }
