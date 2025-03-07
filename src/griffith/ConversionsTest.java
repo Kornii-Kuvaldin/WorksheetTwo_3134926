@@ -32,5 +32,15 @@ class ConversionsTest {
 			conversions.stringToInteger(""));
 			assertEquals("String can't be empty or of incorrect format", e.getMessage());
 	}
+
+	@Test
+	void testIntegerToString() {
+		Conversions conversions = new Conversions();
+		assertEquals("42", conversions.integerToString(42));
+		assertEquals("-42", conversions.integerToString(-42));
+		Throwable e = assertThrows(NullPointerException.class, () ->
+			conversions.integerToString((Integer)null));
+			assertEquals("Cannot invoke \"java.lang.Integer.intValue()\" because \"null\" is null", e.getMessage());
+	}
 	
 }

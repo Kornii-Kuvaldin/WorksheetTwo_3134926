@@ -30,8 +30,10 @@ public class Conversions {
 	}
 	
 	public String integerToString (int val) {
-		return "";
+		Integer valObj = val;
+		return valObj.toString();
 	}
+	
 	public String switchCase() {	// change uppercase to lowercase and vice versa
 		return "";
 	} 
